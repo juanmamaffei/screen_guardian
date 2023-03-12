@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_12_070622) do
-  create_table "screen_times", force: :cascade do |t|
-    t.integer "duration"
-    t.string "screen_type"
-    t.string "app_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+ActiveRecord::Schema[7.0].define(version: 20_230_312_070_622) do
+  create_table 'screen_times', force: :cascade do |t|
+    t.integer 'duration'
+    t.string 'screen_type'
+    t.string 'app_name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end

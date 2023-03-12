@@ -1,5 +1,5 @@
 class ScreenTimesController < ApplicationController
-  before_action :set_screen_time, only: %i[ show edit update destroy ]
+  before_action :set_screen_time, only: %i[show edit update destroy]
 
   # GET /screen_times or /screen_times.json
   def index
@@ -7,8 +7,7 @@ class ScreenTimesController < ApplicationController
   end
 
   # GET /screen_times/1 or /screen_times/1.json
-  def show
-  end
+  def show; end
 
   # GET /screen_times/new
   def new
@@ -16,8 +15,7 @@ class ScreenTimesController < ApplicationController
   end
 
   # GET /screen_times/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /screen_times or /screen_times.json
   def create
@@ -25,7 +23,7 @@ class ScreenTimesController < ApplicationController
 
     respond_to do |format|
       if @screen_time.save
-        format.html { redirect_to screen_time_url(@screen_time), notice: "Screen time was successfully created." }
+        format.html { redirect_to screen_time_url(@screen_time), notice: 'Screen time was successfully created.' }
         format.json { render :show, status: :created, location: @screen_time }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class ScreenTimesController < ApplicationController
   def update
     respond_to do |format|
       if @screen_time.update(screen_time_params)
-        format.html { redirect_to screen_time_url(@screen_time), notice: "Screen time was successfully updated." }
+        format.html { redirect_to screen_time_url(@screen_time), notice: 'Screen time was successfully updated.' }
         format.json { render :show, status: :ok, location: @screen_time }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class ScreenTimesController < ApplicationController
     @screen_time.destroy
 
     respond_to do |format|
-      format.html { redirect_to screen_times_url, notice: "Screen time was successfully destroyed." }
+      format.html { redirect_to screen_times_url, notice: 'Screen time was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_screen_time
-      @screen_time = ScreenTime.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def screen_time_params
-      params.require(:screen_time).permit(:duration, :screen_type, :app_name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_screen_time
+    @screen_time = ScreenTime.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def screen_time_params
+    params.require(:screen_time).permit(:duration, :screen_type, :app_name)
+  end
 end
