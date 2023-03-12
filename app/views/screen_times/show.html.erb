@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @screen_time %>
+
+<div>
+  <%= link_to "Edit this screen time", edit_screen_time_path(@screen_time) %> |
+  <%= link_to "Back to screen times", screen_times_path %>
+
+  <%= button_to "Destroy this screen time", @screen_time, method: :delete %>
+</div>

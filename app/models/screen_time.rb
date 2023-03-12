@@ -1,0 +1,2 @@
+class ScreenTime < ApplicationRecord
+end
